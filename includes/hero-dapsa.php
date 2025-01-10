@@ -12,15 +12,15 @@
 
         <div class="image-grid" data-aos="zoom-in" data-aos-delay="300">
             <div class="grid-item item-1">
-                <img src="assets/img/office-1.webp" alt="Office Interior" class="img-fluid">
+                <img src="assets/img/estacion-dapsa.jpg" alt="Office Interior" class="img-fluid">
             </div>
 
             <div class="grid-item item-2">
-                <img src="assets/img/working-2.jpg" alt="Business Meeting" class="img-fluid">
+                <img src="assets/img/camion-dapsa.jpg" alt="Business Meeting" class="img-fluid">
             </div>
 
             <div class="grid-item item-3">
-                <img src="assets/img/office-3.webp" alt="Digital Workspace" class="img-fluid">
+                <img src="assets/img/estacion1-dapsa.jpg" alt="Digital Workspace" class="img-fluid">
             </div>
 
             <div class="grid-item item-4">
@@ -28,11 +28,11 @@
             </div>
 
             <div class="grid-item item-5">
-                <img src="assets/img/office-4.webp" alt="Modern Office" class="img-fluid">
+                <img src="assets/img/estacion1-dapsa.jpg" alt="Modern Office" class="img-fluid">
             </div>
 
             <div class="grid-item item-6">
-                <img src="assets/img/working-5.jpg" alt="Team Collaboration" class="img-fluid">
+                <img src="assets/img/carga-nafta.jpg" alt="Team Collaboration" class="img-fluid">
             </div>
         </div>
 

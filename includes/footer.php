@@ -3,11 +3,11 @@
         <h3 class="sitename">DapsaTimbues</h3>
         <p>,,,</p>
         <div class="social-links d-flex justify-content-center">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <!-- <a href=""><i class="bi bi-twitter-x"></i></a> -->
             <a href=""><i class="bi bi-facebook"></i></a>
             <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-skype"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+            <!-- <a href=""><i class="bi bi-skype"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a> -->
         </div>
         <div class="container">
             <div class="copyright">

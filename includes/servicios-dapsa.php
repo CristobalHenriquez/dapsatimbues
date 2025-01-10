@@ -3,8 +3,8 @@
 
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
-        <h2>Services</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <h2>Servicios</h2>
+        <p>Ofrecemos estos dos servicios</p>
     </div><!-- End Section Title -->
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -18,9 +18,9 @@
                     </div>
                     <div class="details">
                         <a href="service-details.html" class="stretched-link">
-                            <h3>Nesciunt Mete</h3>
+                            <h3>Cabañas </h3>
                         </a>
-                        <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis.</p>
+                        <p>Disfruta de las mejores cabañas</p>
                     </div>
                 </div>
             </div><!-- End Service Item -->
@@ -32,13 +32,13 @@
                     </div>
                     <div class="details">
                         <a href="service-details.html" class="stretched-link">
-                            <h3>Eosle Commodi</h3>
+                            <h3>Restaurant</h3>
                         </a>
-                        <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
+                        <p>Disfruta de las mejores comidas</p>
                     </div>
                 </div>
             </div><!-- End Service Item -->
-
+<!-- 
             <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="400">
                 <div class="service-item position-relative">
                     <div class="img">
@@ -51,9 +51,9 @@
                         <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
                     </div>
                 </div>
-            </div><!-- End Service Item -->
+            </div>End Service Item -->
 
-            <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="500">
+            <!-- <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="500">
                 <div class="service-item position-relative">
                     <div class="img">
                         <img src="assets/img/services-4.jpg" class="img-fluid" alt="">
@@ -66,7 +66,7 @@
                         <a href="service-details.html" class="stretched-link"></a>
                     </div>
                 </div>
-            </div><!-- End Service Item -->
+            </div>End Service Item -->
 
         </div>
 
