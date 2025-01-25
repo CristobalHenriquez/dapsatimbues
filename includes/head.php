@@ -9,8 +9,7 @@
     <meta name="keywords" content="">
 
     <!-- Favicons -->
-    <link href="assets\img\dapsa-logo.png" rel="icon">
-
+    <link href="assets\img\dapsa-logo.png" rel="icon"> <!-- Cambiar por el logo de Dapsa por un icon -->
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
