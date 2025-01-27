@@ -1,7 +1,6 @@
 <footer id="footer" class="footer dark-background">
     <div class="container">
         <h3 class="sitename">DapsaTimbues</h3>
-        <p>,,,</p>
         <div class="social-links d-flex justify-content-center">
             <!-- <a href=""><i class="bi bi-twitter-x"></i></a> -->
             <a href=""><i class="bi bi-facebook"></i></a>
@@ -9,13 +8,18 @@
             <!-- <a href=""><i class="bi bi-skype"></i></a>
             <a href=""><i class="bi bi-linkedin"></i></a> -->
         </div>
-        <div class="container">
-            <div class="copyright">
-                <span>Copyright</span> <strong class="px-1 sitename">MyWebsite</strong> <span>All Rights Reserved</span>
-            </div>
+        <!-- Logo con enlace -->
+        <div class="credits text-center">
+            <a href="#" target="_blank">
+                <img src="assets/img/Logo_Artisans_.png" alt="Logo Artisans" class="footer-logo" style="width: 150px;">
+            </a>
         </div>
     </div>
 </footer>
+
+<a href="#" class="whatsapp-float" target="_blank">
+    <i class="bi bi-whatsapp"></i>
+</a>
 
 <!-- Scroll Top -->
 <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

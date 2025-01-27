@@ -15,7 +15,7 @@
 
         <div class="row gy-4">
 
-            <div class="col-lg-4">
+            <div class="col-lg-4" style="font-family: 'Esphimere', sans-serif;">
                 <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
                     <i class="bi bi-geo-alt flex-shrink-0"></i>
                     <div>
