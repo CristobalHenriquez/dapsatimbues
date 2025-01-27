@@ -14,10 +14,10 @@
             <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="200">
                 <div class="service-item position-relative">
                     <div class="img">
-                        <img src="assets/img/services-1.jpg" class="img-fluid" alt="">
+                        <img src="assets/img/cabanas.jpeg" class="img-fluid" alt="Cabañas">
                     </div>
                     <div class="details">
-                        <a href="service-details.html" class="stretched-link">
+                        <a href="cabanas.php" class="stretched-link">
                             <h3>Cabañas </h3>
                         </a>
                         <p>Disfruta de las mejores cabañas</p>
@@ -28,13 +28,13 @@
             <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="300">
                 <div class="service-item position-relative">
                     <div class="img">
-                        <img src="assets/img/services-2.jpg" class="img-fluid" alt="">
+                        <img src="assets/img/hoteles.jpg" class="img-fluid" alt="Hoteles">
                     </div>
                     <div class="details">
-                        <a href="service-details.html" class="stretched-link">
-                            <h3>Restaurant</h3>
+                        <a href="hoteles.php" class="stretched-link">
+                            <h3>Hoteles</h3>
                         </a>
-                        <p>Disfruta de las mejores comidas</p>
+                        <p>Disfruta de las mejores hoteles</p>
                     </div>
                 </div>
             </div><!-- End Service Item -->

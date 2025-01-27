@@ -15,19 +15,19 @@ include 'includes/head.php';
 
     <?php
     //INCLUYO HERO-DAPSA
-    include 'includes/hero-dapsa.php';
+    include 'templates/hero-dapsa.php';
 
     //INCLUYO CLIENTS-DAPSA
-    include 'includes/clients-dapsa.php';
-
-    //INCLUYO CONTACTO-DAPSA
-    include 'includes/contacto-dapsa.php';
+    include 'templates/clients-dapsa.php';
 
     //INCLUYO ABOUT-DAPSA
-    include 'includes/about-dapsa.php';
-    
+    include 'templates/about-dapsa.php';
+
     //INCLUYO SERVICIOS-DAPSA
-    include 'includes/servicios-dapsa.php';
+    include 'templates/servicios-dapsa.php';
+
+    //INCLUYO CONTACTO-DAPSA
+    include 'templates/contacto-dapsa.php';
     ?>
   </main>
 
