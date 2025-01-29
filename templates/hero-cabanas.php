@@ -3,7 +3,7 @@
     <div class="hero-content">
         <h1 class="hero-title">Cabañas DapsaTimbues</h1>
         <p class="hero-subtitle">Tu refugio en la naturaleza</p>
-        <a href="#reservar" class="hero-cta">Reserva ahora</a>
+        <a href="#contacto" class="hero-cta">Reserva ahora</a>
     </div>
     <div class="hero-image-container">
         <div class="hero-image-main">

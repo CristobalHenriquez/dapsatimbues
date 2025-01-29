@@ -27,7 +27,7 @@ include 'includes/head-cabanas.php';
 
 
     //INCLUYO CONTACTO-DAPSA
-
+    include_once 'templates/contacto-cabanas.php';
     ?>
   </main>
 
