@@ -45,7 +45,7 @@ try {
 
                                         while ($producto = mysqli_fetch_assoc($result_productos)):
                                         ?>
-                                            <tr>
+                                            <tr data-id="<?php echo $producto['id_producto']; ?>">
                                                 <td><?php echo htmlspecialchars($producto['nombre_producto']); ?></td>
                                                 <td><?php echo htmlspecialchars($producto['descripcion_producto']); ?></td>
                                                 <td>$<?php echo number_format(htmlspecialchars($producto['precio_producto']), 0, '', '.'); ?></td>
@@ -53,7 +53,7 @@ try {
                                                     <button class="btn btn-edit" onclick="editarProducto(<?php echo $producto['id_producto']; ?>)">
                                                         <i class="bi bi-pencil-square"></i>
                                                     </button>
-                                                    <button class="btn btn-delete" onclick="eliminarProducto(<?php echo $producto['id_producto']; ?>)">
+                                                    <button class="btn btn-delete" onclick="eliminarProducto(<?php echo $producto['id_producto']; ?>, '<?php echo htmlspecialchars($producto['nombre_producto']); ?>')">
                                                         <i class="bi bi-trash"></i>
                                                     </button>
                                                 </td>
@@ -157,7 +157,7 @@ try {
         </div>
     </div>
 
-    <!-- SCRIPTS EDITAR PRODUCTO -->
+    <!-- SCRIPTS EDITAR y ELIMINAR PRODUCTO -->
     <script>
         $(document).ready(function() {
             $('.tabla-productos').each(function() {
@@ -232,30 +232,37 @@ try {
                 });
         }
 
-        function eliminarProducto(id) {
+        function eliminarProducto(id, nombreProducto) {
             if (confirm('¿Está seguro de que desea eliminar este producto?')) {
-                // Usar ruta absoluta desde la raíz del proyecto
-                fetch('controladores/eliminar-producto.php', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({
-                            id: id
+                if (confirm(`Por favor, confirme nuevamente que desea eliminar el producto "${nombreProducto}"`)) {
+                    fetch('controladores/eliminar-producto.php', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                id: id
+                            })
                         })
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            location.reload();
-                        } else {
-                            alert('Error al eliminar el producto');
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        alert('Error al eliminar el producto');
-                    });
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Error en la respuesta del servidor');
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            if (data.success) {
+                                alert('Producto eliminado correctamente');
+                                location.reload();
+                            } else {
+                                throw new Error(data.error || 'Error al eliminar el producto');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            alert('Error al eliminar el producto: ' + error.message);
+                        });
+                }
             }
         }
     </script>
