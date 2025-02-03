@@ -2,26 +2,26 @@
 # Font & Color Variables para la sección de Cabañas
 --------------------------------------------------------------*/
 /* IMPORTACIÓN DE NUEVAS FUENTES */
-@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,700;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap");
 
 /* Fonts */
 :root {
-  --default-font: 'Cabin', sans-serif;
-  --heading-font: 'Roboto Slab', serif;
-  --nav-font: 'Merriweather', serif;
+  --default-font: "Cabin", sans-serif;
+  --heading-font: "Roboto Slab", serif;
+  --nav-font: "Merriweather", serif;
 }
 
 /* Colores Globales para la sección de Cabañas */
-:root { 
+:root {
   --background-color: #f5e8dc; /* Fondo beige claro */
   --default-color: #4a3728; /* Texto marrón oscuro */
   --heading-color: #8b4513; /* Marrón rojizo para títulos */
   --accent-color: #d2691e; /* Marrón anaranjado para acentos */
   --surface-color: #ffffff; /* Blanco para elementos de superficie */
   --contrast-color: #ffffff; /* Blanco para contraste */
-  
+
   /* Colores específicos para cabañas */
   --wood-color: #8b4513; /* Marrón madera */
   --forest-color: #228b22; /* Verde bosque */
@@ -30,7 +30,7 @@
 
 /* Colores del Menú de Navegación */
 :root {
-  --nav-color: #4a3728;  /* Marrón oscuro para enlaces del menú */
+  --nav-color: #4a3728; /* Marrón oscuro para enlaces del menú */
   --nav-hover-color: #d2691e; /* Marrón anaranjado para hover */
   --nav-mobile-background-color: #f5e8dc; /* Beige claro para fondo móvil */
   --nav-dropdown-background-color: #ffffff; /* Blanco para fondo de dropdowns */
@@ -156,7 +156,7 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 64px;/* 32px */
+  max-height: 64px; /* 32px */
   margin-right: 8px;
 }
 
@@ -218,7 +218,7 @@ h6 {
     padding-right: 0;
   }
 
-  .navmenu li:hover>a,
+  .navmenu li:hover > a,
   .navmenu .active,
   .navmenu .active:focus {
     color: var(--nav-hover-color);
@@ -257,11 +257,11 @@ h6 {
 
   .navmenu .dropdown ul a:hover,
   .navmenu .dropdown ul .active:hover,
-  .navmenu .dropdown ul li:hover>a {
+  .navmenu .dropdown ul li:hover > a {
     color: var(--nav-dropdown-hover-color);
   }
 
-  .navmenu .dropdown:hover>ul {
+  .navmenu .dropdown:hover > ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
@@ -273,7 +273,7 @@ h6 {
     visibility: hidden;
   }
 
-  .navmenu .dropdown .dropdown:hover>ul {
+  .navmenu .dropdown .dropdown:hover > ul {
     opacity: 1;
     top: 0;
     left: -100%;
@@ -376,7 +376,7 @@ h6 {
     background-color: rgba(33, 37, 41, 0.1);
   }
 
-  .navmenu .dropdown>.dropdown-active {
+  .navmenu .dropdown > .dropdown-active {
     display: block;
     background-color: rgba(33, 37, 41, 0.03);
   }
@@ -403,7 +403,7 @@ h6 {
     transition: 0.3s;
   }
 
-  .mobile-nav-active .navmenu>ul {
+  .mobile-nav-active .navmenu > ul {
     display: block;
   }
 }
@@ -580,11 +580,11 @@ h6 {
   font-weight: 600;
 }
 
-.page-title nav ol li+li {
+.page-title nav ol li + li {
   padding-left: 10px;
 }
 
-.page-title nav ol li+li::before {
+.page-title nav ol li + li::before {
   content: "/";
   display: inline-block;
   padding-right: 10px;
@@ -604,7 +604,6 @@ section,
 }
 
 @media (max-width: 1199px) {
-
   section,
   .section {
     scroll-margin-top: 66px;
@@ -688,20 +687,30 @@ section,
 
 .hero-image-main {
   width: 100%;
-  height: 300px;
+  height: 400px; /* Aumentamos la altura para acomodar dos imágenes */
   overflow: hidden;
   border-radius: 15px;
   margin-bottom: 1rem;
+  display: flex; /* Usamos flexbox para dividir el espacio */
 }
 
-.hero-image-main img {
+.hero-image-half {
+  flex: 1;
+  overflow: hidden;
+}
+
+.hero-image-half:first-child {
+  margin-right: 0.5rem; /* Añadimos un pequeño espacio entre las imágenes */
+}
+
+.hero-image-half img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-.hero-image-main img:hover {
+.hero-image-half img:hover {
   transform: scale(1.05);
 }
 
@@ -725,24 +734,28 @@ section,
 
 @media (max-width: 768px) {
   .hero-cabanas {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   .hero-content {
-      padding-right: 0;
-      margin-bottom: 2rem;
+    padding-right: 0;
+    margin-bottom: 2rem;
   }
 
   .hero-title {
-      font-size: 2.5rem;
+    font-size: 2.5rem;
   }
 
   .hero-image-main {
-      height: 200px;
+    height: 300px; /* Reducimos la altura en dispositivos móviles */
+  }
+
+  .hero-image-half:first-child {
+    margin-right: 0.25rem; /* Reducimos el espacio entre imágenes en móviles */
   }
 
   .hero-image-grid img {
-      height: 100px;
+    height: 100px;
   }
 }
 
@@ -878,172 +891,165 @@ section,
 
 @media (max-width: 768px) {
   .contact-wrapper {
-      flex-direction: column;
+    flex-direction: column;
   }
 }
 
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
-.about .section-subtitle {
-  color: var(--accent-color);
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  display: block;
+.about-cabanas {
+  padding: 80px 0;
+  background-color: var(--background-color);
 }
 
-.about .about-title {
-  font-size: 2.2rem;
-  font-weight: 700;
+.about-cabanas .subtitle {
+  color: var(--accent-color);
+  font-family: var(--accent-font);
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.about-cabanas .section-title h2 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+  font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
-.about .about-description {
+.about-content h3 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-content p {
+  color: var(--default-color);
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.features-list {
   margin-bottom: 2rem;
 }
 
-.about .about-images {
-  position: relative;
-  margin-bottom: 2rem;
-}
-
-.about .about-images .main-image {
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  border: 8px solid var(--surface-color);
-}
-
-.about .about-images .secondary-image {
-  position: absolute;
-  top: 30%;
-  right: -15%;
-  width: 40%;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  border: 5px solid var(--surface-color);
-}
-
-.about .about-images .client-count {
-  position: absolute;
-  bottom: -10%;
-  left: 10%;
-  background-color: var(--surface-color);
-  border-radius: 10px;
-  padding: 1rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-}
-
-.about .about-images .client-count img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  margin-right: 1rem;
-}
-
-.about .about-images .client-count .count-text h3 {
-  color: var(--accent-color);
-  font-size: 1.5rem;
-  margin-bottom: 0;
-}
-
-.about .about-images .client-count .count-text p {
-  font-size: 0.875rem;
-  margin-bottom: 0;
-}
-
-.about .features {
-  margin-bottom: 2rem;
-}
-
-.about .features .feature-item {
+.feature-item {
   display: flex;
   align-items: flex-start;
   margin-bottom: 1.5rem;
 }
 
-.about .features .feature-item i {
-  font-size: 2rem;
+.feature-item i {
   color: var(--accent-color);
+  font-size: 2rem;
   margin-right: 1rem;
 }
 
-.about .features .feature-item .feature-content h4 {
-  font-size: 1.25rem;
+.feature-item h4 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+  font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
 
-.about .features .feature-item .feature-content p {
-  font-size: 0.875rem;
+.feature-item p {
+  color: var(--default-color);
   margin-bottom: 0;
+  font-size: 0.9rem;
 }
 
-.about .cta-wrapper {
+.about-images {
+  position: relative;
+}
+
+.image-grid {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.main-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.main-image img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.main-image:hover img {
+  transform: scale(1.05);
+}
+
+.image-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(74, 55, 40, 0.9);
+  padding: 2rem;
+  color: var(--contrast-color);
+}
+
+.info-box h4 {
+  color: var(--contrast-color);
+  font-family: var(--heading-font);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.info-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.info-box ul li {
   display: flex;
   align-items: center;
+  font-size: 0.9rem;
 }
 
-.about .cta-wrapper .btn-primary {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
-  padding: 0.75rem 1.5rem;
-  font-weight: 600;
-  margin-right: 1.5rem;
-  transition: all 0.3s ease;
+.info-box ul li i {
+  color: var(--accent-color);
+  margin-right: 0.5rem;
 }
 
-.about .cta-wrapper .btn-primary:hover {
-  background-color: color-mix(in srgb, var(--accent-color), black 10%);
-  border-color: color-mix(in srgb, var(--accent-color), black 10%);
-}
-
-.about .cta-wrapper .cta-text h4 {
-  font-size: 1.25rem;
-  margin-bottom: 0.25rem;
-}
-
-.about .cta-wrapper .cta-text p {
-  font-size: 0.875rem;
-  margin-bottom: 0;
-  color: color-mix(in srgb, var(--default-color), transparent 25%);
-}
-
-@media (max-width: 991.98px) {
-  .about .about-images .secondary-image {
-    right: 0;
-    width: 50%;
+@media (max-width: 991px) {
+  .about-content {
+      margin-bottom: 3rem;
   }
 
-  .about .about-images .client-count {
-    left: 0;
+  .cta-wrapper {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+  }
+
+  .info-box ul {
+      grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 767.98px) {
-  .about .section-title {
-    font-size: 2rem;
+@media (max-width: 768px) {
+  .about-cabanas {
+      padding: 60px 0;
   }
 
-  .about .about-images .secondary-image {
-    position: static;
-    width: 100%;
-    margin-top: 1rem;
+  .about-cabanas .section-title h2 {
+      font-size: 2rem;
   }
 
-  .about .about-images .client-count {
-    position: static;
-    margin-top: 1rem;
-  }
-
-  .about .cta-wrapper {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .about .cta-wrapper .btn-primary {
-    margin-right: 0;
-    margin-bottom: 1rem;
+  .about-content h3 {
+      font-size: 1.75rem;
   }
 }
 
@@ -1056,6 +1062,10 @@ section,
 }
 
 .services .img img {
+  transition: 0.6s;
+}
+
+.services .details {
   transition: 0.6s;
 }
 
@@ -1118,3 +1128,4 @@ section,
 .whatsapp-float i {
   font-size: 24px;
 }
+

@@ -17,16 +17,10 @@ include 'includes/head-cabanas.php';
     //INCLUYO HERO
     include_once 'templates/hero-cabanas.php';
 
-    //INCLUYO CLIENTS-DAPSA
+    //INCLUYO ABOUT-CABANAS
+    include_once 'templates/about-cabanas.php';
 
-
-    //INCLUYO ABOUT-DAPSA
-
-
-    //INCLUYO SERVICIOS-DAPSA
-
-
-    //INCLUYO CONTACTO-DAPSA
+    //INCLUYO CONTACTO-CABANAS
     include_once 'templates/contacto-cabanas.php';
     ?>
   </main>

@@ -9,7 +9,7 @@
 
         <nav id="navmenu" class="navmenu">
             <ul>
-                <li><a href="#hero" class="active">Inicio</a></li>
+                <li><a href="#hero">Inicio</a></li>
                 <!-- <li><a href="#about">Acerca de</a></li> -->
                 <!-- <li><a href="#services">Servicios</a></li> -->
                 <!--<li><a href="#portfolio">.</a></li>-->
@@ -31,6 +31,7 @@
                         <li><a href="#">Dropdown 4</a></li>
                     </ul>
                 </li> -->
+                <li><a href="#about">Informacion</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
