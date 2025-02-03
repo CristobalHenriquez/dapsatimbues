@@ -58,7 +58,7 @@ body.admin-page {
 }
 
 .btn-edit {
-    background-color: #28a745;
+    background-color: #f0bf10;
     color: white;
 }
 
@@ -68,7 +68,7 @@ body.admin-page {
 }
 
 .btn-edit:hover {
-    background-color: #218838;
+    background-color: #887a21;
 }
 
 .btn-delete:hover {

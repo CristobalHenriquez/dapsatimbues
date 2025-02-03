@@ -17,8 +17,8 @@ try {
                 <div class="card">
                     <div class="card-header">
                         <h2 class="card-title">Gestión de Productos</h2>
-                        <button class="btn btn-primary float-end" onclick="location.href='agregar-producto.php'">
-                            Agregar Nuevo Producto
+                        <button class="btn btn-success float-end" onclick="mostrarModalAgregar()">
+                            <i class="bi bi-plus-circle me-2"></i>Agregar Nuevo Producto
                         </button>
                     </div>
                     <div class="card-body">
@@ -48,7 +48,7 @@ try {
                                             <tr>
                                                 <td><?php echo htmlspecialchars($producto['nombre_producto']); ?></td>
                                                 <td><?php echo htmlspecialchars($producto['descripcion_producto']); ?></td>
-                                                <td>$<?php echo number_format($producto['precio_producto'], 2); ?></td>
+                                                <td>$<?php echo number_format(htmlspecialchars($producto['precio_producto']), 0, '', '.'); ?></td>
                                                 <td>
                                                     <button class="btn btn-edit" onclick="editarProducto(<?php echo $producto['id_producto']; ?>)">
                                                         <i class="bi bi-pencil-square"></i>
@@ -100,7 +100,7 @@ try {
                             <textarea class="form-control" id="descripcion_producto" name="descripcion_producto" rows="3" required></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="precio_producto">Precio</label>
+                            <label for="precio_producto">Precio($)</label>
                             <input type="number" class="form-control" id="precio_producto" name="precio_producto" step="0.01" required>
                         </div>
                     </form>
@@ -112,7 +112,52 @@ try {
             </div>
         </div>
     </div>
+    <!-- Modal para agregar producto -->
+    <div class="modal fade" id="agregarProductoModal" tabindex="-1" aria-labelledby="agregarProductoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="agregarProductoModalLabel">Agregar Nuevo Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="agregarProductoForm">
+                        <div class="form-group mb-3">
+                            <label for="nuevo_nombre_producto">Nombre del Producto</label>
+                            <input type="text" class="form-control" id="nuevo_nombre_producto" name="nombre_producto" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="nuevo_id_categoria">Categoría</label>
+                            <select class="form-control" id="nuevo_id_categoria" name="id_categoria" required>
+                                <?php
+                                mysqli_data_seek($result_categorias, 0);
+                                while ($categoria = mysqli_fetch_assoc($result_categorias)):
+                                ?>
+                                    <option value="<?php echo $categoria['id_categoria']; ?>">
+                                        <?php echo htmlspecialchars($categoria['nombre_categoria']); ?>
+                                    </option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="nuevo_descripcion_producto">Descripción</label>
+                            <textarea class="form-control" id="nuevo_descripcion_producto" name="descripcion_producto" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="nuevo_precio_producto">Precio($)</label>
+                            <input type="number" class="form-control" id="nuevo_precio_producto" name="precio_producto" step="0.01" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" onclick="agregarProducto()">Agregar Producto</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- SCRIPTS EDITAR PRODUCTO -->
     <script>
         $(document).ready(function() {
             $('.tabla-productos').each(function() {
@@ -212,6 +257,41 @@ try {
                         alert('Error al eliminar el producto');
                     });
             }
+        }
+    </script>
+    <!-- SCRIPT AGREGAR PRODUCTO -->
+    <script>
+        function mostrarModalAgregar() {
+            const modalElement = document.getElementById('agregarProductoModal');
+            const modal = new bootstrap.Modal(modalElement);
+            modal.show();
+        }
+
+        function agregarProducto() {
+            const formData = new FormData(document.getElementById('agregarProductoForm'));
+
+            fetch('controladores/agregar-producto.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Error en la respuesta del servidor');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.success) {
+                        alert('Producto agregado correctamente');
+                        location.reload();
+                    } else {
+                        throw new Error(data.error || 'Error al agregar el producto');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error al agregar el producto: ' + error.message);
+                });
         }
     </script>
 
