@@ -11,13 +11,13 @@ try {
         throw new Exception("Error al obtener categorías: " . mysqli_error($db));
     }
 ?>
-    <div class="container-fluid py-4">
-        <div class="row">
-            <div class="col-12">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-md-12 col-sm-12">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header d-flex justify-content-between align-items-center">
                         <h2 class="card-title">Gestión de Productos</h2>
-                        <button class="btn btn-success float-end" onclick="mostrarModalAgregar()">
+                        <button class="btn btn-success" onclick="mostrarModalAgregar()">
                             <i class="bi bi-plus-circle me-2"></i>Agregar Nuevo Producto
                         </button>
                     </div>
@@ -48,7 +48,7 @@ try {
                                             <tr data-id="<?php echo $producto['id_producto']; ?>">
                                                 <td><?php echo htmlspecialchars($producto['nombre_producto']); ?></td>
                                                 <td><?php echo htmlspecialchars($producto['descripcion_producto']); ?></td>
-                                                <td>$<?php echo number_format(htmlspecialchars($producto['precio_producto']), 0, '', '.'); ?></td>
+                                                <td>$<?php echo number_format($producto['precio_producto'], 0, '', '.'); ?></td>
                                                 <td>
                                                     <button class="btn btn-edit" onclick="editarProducto(<?php echo $producto['id_producto']; ?>)">
                                                         <i class="bi bi-pencil-square"></i>
@@ -157,6 +157,7 @@ try {
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
     <!-- SCRIPTS EDITAR y ELIMINAR PRODUCTO -->
     <script>
         $(document).ready(function() {
@@ -173,6 +174,32 @@ try {
                 });
             });
         });
+
+        function mostrarAlerta(titulo, mensaje, tipo) {
+            Swal.fire({
+                title: titulo,
+                text: mensaje,
+                icon: tipo,
+                confirmButtonText: 'Aceptar'
+            });
+        }
+
+        function confirmarAccion(titulo, mensaje, accionConfirmada) {
+            Swal.fire({
+                title: titulo,
+                text: mensaje,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, confirmar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    accionConfirmada();
+                }
+            });
+        }
 
         function editarProducto(id) {
             // Usar ruta absoluta desde la raíz del proyecto
@@ -207,34 +234,30 @@ try {
         function guardarCambios() {
             const formData = new FormData(document.getElementById('editarProductoForm'));
 
-            // Usar ruta absoluta desde la raíz del proyecto
             fetch('controladores/editar-producto.php', {
                     method: 'POST',
                     body: formData
                 })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Error en la respuesta del servidor');
-                    }
-                    return response.json();
-                })
+                .then(response => response.json())
                 .then(data => {
                     if (data.success) {
-                        alert('Producto actualizado correctamente');
-                        location.reload();
+                        mostrarAlerta('Éxito', 'Producto actualizado correctamente', 'success');
+                        setTimeout(() => location.reload(), 1500);
                     } else {
                         throw new Error(data.error || 'Error al guardar los cambios');
                     }
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    alert('Error al guardar los cambios: ' + error.message);
+                    mostrarAlerta('Error', 'Error al guardar los cambios: ' + error.message, 'error');
                 });
         }
 
         function eliminarProducto(id, nombreProducto) {
-            if (confirm('¿Está seguro de que desea eliminar este producto?')) {
-                if (confirm(`Por favor, confirme nuevamente que desea eliminar el producto "${nombreProducto}"`)) {
+            confirmarAccion(
+                '¿Está seguro?',
+                `¿Desea eliminar el producto "${nombreProducto}"?`,
+                () => {
                     fetch('controladores/eliminar-producto.php', {
                             method: 'POST',
                             headers: {
@@ -244,26 +267,21 @@ try {
                                 id: id
                             })
                         })
-                        .then(response => {
-                            if (!response.ok) {
-                                throw new Error('Error en la respuesta del servidor');
-                            }
-                            return response.json();
-                        })
+                        .then(response => response.json())
                         .then(data => {
                             if (data.success) {
-                                alert('Producto eliminado correctamente');
-                                location.reload();
+                                mostrarAlerta('Éxito', 'Producto eliminado correctamente', 'success');
+                                setTimeout(() => location.reload(), 1500);
                             } else {
                                 throw new Error(data.error || 'Error al eliminar el producto');
                             }
                         })
                         .catch(error => {
                             console.error('Error:', error);
-                            alert('Error al eliminar el producto: ' + error.message);
+                            mostrarAlerta('Error', 'Error al eliminar el producto: ' + error.message, 'error');
                         });
                 }
-            }
+            );
         }
     </script>
     <!-- SCRIPT AGREGAR PRODUCTO -->
@@ -281,23 +299,18 @@ try {
                     method: 'POST',
                     body: formData
                 })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Error en la respuesta del servidor');
-                    }
-                    return response.json();
-                })
+                .then(response => response.json())
                 .then(data => {
                     if (data.success) {
-                        alert('Producto agregado correctamente');
-                        location.reload();
+                        mostrarAlerta('Éxito', 'Producto agregado correctamente', 'success');
+                        setTimeout(() => location.reload(), 1500);
                     } else {
                         throw new Error(data.error || 'Error al agregar el producto');
                     }
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    alert('Error al agregar el producto: ' + error.message);
+                    mostrarAlerta('Error', 'Error al agregar el producto: ' + error.message, 'error');
                 });
         }
     </script>

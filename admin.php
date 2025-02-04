@@ -5,20 +5,12 @@ include 'includes/head-admin.php';
 ?>
 
 <body class="admin-page">
-    <?php
-    //INCLUYO NAV
-    //include 'includes/nav-admin.php';
-    ?>
 
     <main class="main">
         <?php
         include 'templates/admin-main.php';
         ?>
     </main>
-
-    <?php
-    //include 'includes/footer-admin.php';
-    ?>
 
     <!-- jQuery primero -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
