@@ -22,7 +22,10 @@ try {
                         </button>
                     </div>
                     <div class="card-body">
-                        <?php while ($categoria = mysqli_fetch_assoc($result_categorias)): ?>
+                        <?php 
+                        if (mysqli_num_rows($result_categorias) > 0) {
+                            while ($categoria = mysqli_fetch_assoc($result_categorias)): 
+                        ?>
                             <h3 class="categoria-titulo"><?php echo htmlspecialchars($categoria['nombre_categoria']); ?></h3>
                             <div class="table-responsive mb-4">
                                 <table class="table tabla-productos" id="tabla-categoria-<?php echo $categoria['id_categoria']; ?>">
@@ -36,33 +39,60 @@ try {
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $query_productos = "SELECT * FROM productos WHERE id_categoria = " . $categoria['id_categoria'];
-                                        $result_productos = mysqli_query($db, $query_productos);
+                                        $query_productos = "SELECT * FROM productos WHERE id_categoria = ?";
+                                        $stmt = mysqli_prepare($db, $query_productos);
+                                        mysqli_stmt_bind_param($stmt, "i", $categoria['id_categoria']);
+                                        mysqli_stmt_execute($stmt);
+                                        $result_productos = mysqli_stmt_get_result($stmt);
 
                                         if (!$result_productos) {
                                             throw new Exception("Error al obtener productos: " . mysqli_error($db));
                                         }
 
-                                        while ($producto = mysqli_fetch_assoc($result_productos)):
+                                        if (mysqli_num_rows($result_productos) > 0) {
+                                            while ($producto = mysqli_fetch_assoc($result_productos)):
                                         ?>
                                             <tr data-id="<?php echo $producto['id_producto']; ?>">
-                                                <td><?php echo htmlspecialchars($producto['nombre_producto']); ?></td>
-                                                <td><?php echo htmlspecialchars($producto['descripcion_producto']); ?></td>
-                                                <td>$<?php echo number_format($producto['precio_producto'], 0, '', '.'); ?></td>
-                                                <td>
-                                                    <button class="btn btn-edit" onclick="editarProducto(<?php echo $producto['id_producto']; ?>)">
-                                                        <i class="bi bi-pencil-square"></i>
-                                                    </button>
-                                                    <button class="btn btn-delete" onclick="eliminarProducto(<?php echo $producto['id_producto']; ?>, '<?php echo htmlspecialchars($producto['nombre_producto']); ?>')">
-                                                        <i class="bi bi-trash"></i>
-                                                    </button>
+                                                <td data-label="Nombre"><?php echo htmlspecialchars($producto['nombre_producto']); ?></td>
+                                                <td data-label="Descripción"><?php echo htmlspecialchars($producto['descripcion_producto']); ?></td>
+                                                <td data-label="Precio">$<?php echo number_format($producto['precio_producto'], 0, '', '.'); ?></td>
+                                                <td data-label="Acciones">
+                                                    <div class="btn-group" role="group">
+                                                        <button class="btn btn-sm btn-outline-primary" onclick="editarProducto(<?php echo $producto['id_producto']; ?>)">
+                                                            <i class="bi bi-pencil-square"></i>
+                                                            <span class="d-none d-md-inline ms-1">Editar</span>
+                                                        </button>
+                                                        <button class="btn btn-sm btn-outline-danger" onclick="eliminarProducto(<?php echo $producto['id_producto']; ?>, '<?php echo htmlspecialchars($producto['nombre_producto']); ?>')">
+                                                            <i class="bi bi-trash"></i>
+                                                            <span class="d-none d-md-inline ms-1">Eliminar</span>
+                                                        </button>
+                                                    </div>
                                                 </td>
                                             </tr>
-                                        <?php endwhile; ?>
+                                        <?php 
+                                            endwhile;
+                                        } else {
+                                        ?>
+                                            <tr>
+                                                <td colspan="4" class="text-center">No hay productos en esta categoría</td>
+                                            </tr>
+                                        <?php
+                                        }
+                                        mysqli_stmt_close($stmt);
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
-                        <?php endwhile; ?>
+                        <?php 
+                            endwhile;
+                        } else {
+                        ?>
+                            <div class="alert alert-info">
+                                No hay categorías disponibles. Por favor, agregue una categoría primero.
+                            </div>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
