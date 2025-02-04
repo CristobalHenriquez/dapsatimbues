@@ -1,0 +1,226 @@
+:root {
+    --heading-font: 'Esphimere', sans-serif;
+    --nav-font: "Panton Narrow", sans-serif;
+    --heading-color: #e90505;
+    --accent-color: #850506;
+    --text-dark: #333333;
+    --text-medium: #666666;
+    --text-light: #999999;
+    --border-color: #e0e0e0;
+    --background-light: #f8f8f8;
+}
+
+body {
+    margin: 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    font-family: var(--nav-font);
+    color: var(--text-dark);
+}
+
+.menu-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    border-radius: 15px;
+}
+
+.menu-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.menu-header h1 {
+    font-family: var(--heading-font);
+    color: var(--heading-color);
+    font-size: 2.5em;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    font-family: var(--nav-font);
+    color: var(--text-medium);
+    font-size: 1.1em;
+    margin: 10px 0;
+    font-style: italic;
+}
+
+.menu-section {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.category-title {
+    color: var(--heading-color);
+    text-align: center;
+    font-size: 1.6em;
+    margin: 20px 0;
+    padding: 10px 0;
+    border-bottom: 2px solid var(--border-color);
+    font-weight: normal;
+}
+
+.category-description {
+    text-align: center;
+    color: var(--text-medium);
+    margin-bottom: 20px;
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu-item {
+    padding: 15px;
+    background-color: var(--background-light);
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.menu-item:hover {
+    transform: translateX(5px);
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 10px;
+}
+
+.item-name {
+    font-family: var(--nav-font);
+    color: var(--text-dark);
+    font-size: 1.1em;
+    margin: 0;
+    font-weight: 500;
+}
+
+.item-price {
+    color: var(--heading-color);
+    font-size: 1.2em;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.item-description {
+    color: var(--text-medium);
+    margin: 0;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        background-color: white;
+    }
+
+    .menu-container {
+        padding: 10px;
+        box-shadow: none;
+    }
+
+    .menu-header h1 {
+        font-size: 2em;
+    }
+
+    .menu-section {
+        padding: 10px 0;
+    }
+
+    .category-title {
+        font-size: 1.4em;
+        margin: 15px 0;
+        padding-bottom: 10px;
+    }
+
+    .menu-item {
+        padding: 12px;
+        border: 1px solid var(--border-color);
+        margin-bottom: 10px;
+    }
+
+    .item-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    .item-name {
+        font-size: 1.1em;
+        flex: 1;
+    }
+
+    .item-price {
+        font-size: 1.1em;
+        color: var(--heading-color);
+        font-weight: 600;
+    }
+
+    .item-description {
+        font-size: 0.9em;
+        color: var(--text-medium);
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-container {
+        padding: 10px;
+    }
+
+    .menu-header h1 {
+        font-size: 1.8em;
+    }
+
+    .subtitle {
+        font-size: 0.9em;
+    }
+
+    .category-title {
+        font-size: 1.3em;
+    }
+
+    .menu-item {
+        background-color: white;
+        border-bottom: 1px solid var(--border-color);
+        border-radius: 0;
+        margin: 0;
+        padding: 15px 10px;
+    }
+
+    .menu-item:last-child {
+        border-bottom: none;
+    }
+
+    .item-header {
+        margin-bottom: 5px;
+    }
+
+    .item-name {
+        font-size: 1em;
+    }
+
+    .item-price {
+        font-size: 1em;
+    }
+
+    .item-description {
+        font-size: 0.85em;
+        line-height: 1.4;
+    }
+}
