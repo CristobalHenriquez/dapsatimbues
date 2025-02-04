@@ -1,38 +1,41 @@
 /*--------------------------------------------------------------
-# Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
+# Font & Color Variables para la sección de Cabañas
 --------------------------------------------------------------*/
-/* IMPORTACION DE FUENTES DE DAPSA */
-@import url('https://fonts.cdnfonts.com/css/acer-supplement');
-@import url('https://fonts.cdnfonts.com/css/esphimere');
-@import url('https://fonts.cdnfonts.com/css/panton');
+/* IMPORTACIÓN DE NUEVAS FUENTES */
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap");
 
 /* Fonts */
 :root {
-  /* --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
-  --default-font: 'Acer supplement', sans-serif;
-  --heading-font: 'Esphimere', sans-serif; /*ITALIC*/
-  --nav-font: "Panton Narrow", sans-serif;
+  --default-font: "Cabin", sans-serif;
+  --heading-font: "Roboto Slab", serif;
+  --nav-font: "Merriweather", serif;
 }
 
-/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #212529; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #e90505; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #850506; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
-}
-
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+/* Colores Globales para la sección de Cabañas */
 :root {
-  --nav-color: #212529;  /* The default color of the main navmenu links */
-  --nav-hover-color: #e90505; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #850506; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --background-color: #f5e8dc; /* Fondo beige claro */
+  --default-color: #4a3728; /* Texto marrón oscuro */
+  --heading-color: #8b4513; /* Marrón rojizo para títulos */
+  --accent-color: #d2691e; /* Marrón anaranjado para acentos */
+  --surface-color: #ffffff; /* Blanco para elementos de superficie */
+  --contrast-color: #ffffff; /* Blanco para contraste */
+
+  /* Colores específicos para cabañas */
+  --wood-color: #8b4513; /* Marrón madera */
+  --forest-color: #228b22; /* Verde bosque */
+  --earth-color: #cd853f; /* Marrón tierra */
+}
+
+/* Colores del Menú de Navegación */
+:root {
+  --nav-color: #4a3728; /* Marrón oscuro para enlaces del menú */
+  --nav-hover-color: #d2691e; /* Marrón anaranjado para hover */
+  --nav-mobile-background-color: #f5e8dc; /* Beige claro para fondo móvil */
+  --nav-dropdown-background-color: #ffffff; /* Blanco para fondo de dropdowns */
+  --nav-dropdown-color: #4a3728; /* Marrón oscuro para texto de dropdowns */
+  --nav-dropdown-hover-color: #8b4513; /* Marrón rojizo para hover de dropdowns */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -153,7 +156,7 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 64px;/* 32px */
+  max-height: 64px; /* 32px */
   margin-right: 8px;
 }
 
@@ -215,7 +218,7 @@ h6 {
     padding-right: 0;
   }
 
-  .navmenu li:hover>a,
+  .navmenu li:hover > a,
   .navmenu .active,
   .navmenu .active:focus {
     color: var(--nav-hover-color);
@@ -254,11 +257,11 @@ h6 {
 
   .navmenu .dropdown ul a:hover,
   .navmenu .dropdown ul .active:hover,
-  .navmenu .dropdown ul li:hover>a {
+  .navmenu .dropdown ul li:hover > a {
     color: var(--nav-dropdown-hover-color);
   }
 
-  .navmenu .dropdown:hover>ul {
+  .navmenu .dropdown:hover > ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
@@ -270,7 +273,7 @@ h6 {
     visibility: hidden;
   }
 
-  .navmenu .dropdown .dropdown:hover>ul {
+  .navmenu .dropdown .dropdown:hover > ul {
     opacity: 1;
     top: 0;
     left: -100%;
@@ -373,7 +376,7 @@ h6 {
     background-color: rgba(33, 37, 41, 0.1);
   }
 
-  .navmenu .dropdown>.dropdown-active {
+  .navmenu .dropdown > .dropdown-active {
     display: block;
     background-color: rgba(33, 37, 41, 0.03);
   }
@@ -400,7 +403,7 @@ h6 {
     transition: 0.3s;
   }
 
-  .mobile-nav-active .navmenu>ul {
+  .mobile-nav-active .navmenu > ul {
     display: block;
   }
 }
@@ -577,11 +580,11 @@ h6 {
   font-weight: 600;
 }
 
-.page-title nav ol li+li {
+.page-title nav ol li + li {
   padding-left: 10px;
 }
 
-.page-title nav ol li+li::before {
+.page-title nav ol li + li::before {
   content: "/";
   display: inline-block;
   padding-right: 10px;
@@ -601,7 +604,6 @@ section,
 }
 
 @media (max-width: 1199px) {
-
   section,
   .section {
     scroll-margin-top: 66px;
@@ -630,129 +632,130 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-.hero {
-  padding-top: 80px;
+/*--------------------------------------------------------------
+# Hero Section - Cabañas
+--------------------------------------------------------------*/
+.hero-cabanas {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  padding: 2rem;
+  overflow: hidden;
 }
 
-.hero .hero-title {
+.hero-content {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.hero-title {
+  font-family: var(--heading-font);
   font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
+  color: var(--heading-color);
+  margin-bottom: 1rem;
 }
 
-@media (max-width: 768px) {
-  .hero .hero-title {
-    font-size: 2.5rem;
-  }
-}
-
-.hero .hero-subtitle {
-  font-size: 1.1rem;
-  line-height: 1.6;
+.hero-subtitle {
+  font-family: var(--default-font);
+  font-size: 1.2rem;
+  color: var(--default-color);
   margin-bottom: 2rem;
-  opacity: 0.9;
 }
 
-.hero .image-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(2, auto);
-  gap: 1.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
+.hero-cta {
+  font-family: var(--default-font);
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .hero .image-grid {
-    grid-template-columns: repeat(6, 1fr);
-    gap: 1rem;
-  }
+.hero-cta:hover {
+  background-color: var(--wood-color);
 }
 
-.hero .image-grid .grid-item {
+.hero-image-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-image-main {
+  width: 100%;
+  height: 400px; /* Aumentamos la altura para acomodar dos imágenes */
   overflow: hidden;
   border-radius: 15px;
+  margin-bottom: 1rem;
+  display: flex; /* Usamos flexbox para dividir el espacio */
 }
 
-.hero .image-grid .grid-item img {
+.hero-image-half {
+  flex: 1;
+  overflow: hidden;
+}
+
+.hero-image-half:first-child {
+  margin-right: 0.5rem; /* Añadimos un pequeño espacio entre las imágenes */
+}
+
+.hero-image-half img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-.hero .image-grid .grid-item img:hover {
+.hero-image-half img:hover {
   transform: scale(1.05);
 }
 
-.hero .image-grid .item-1 {
-  grid-column: 1/4;
-  grid-row: 1/2;
+.hero-image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.hero-image-grid img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.hero-image-grid img:hover {
+  transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
-  .hero .image-grid .item-1 {
-    grid-column: 1/7;
+  .hero-cabanas {
+    flex-direction: column;
   }
-}
 
-.hero .image-grid .item-2 {
-  grid-column: 4/7;
-  grid-row: 1/2;
-}
-
-@media (max-width: 768px) {
-  .hero .image-grid .item-2 {
-    grid-column: 1/4;
-    grid-row: 2/3;
+  .hero-content {
+    padding-right: 0;
+    margin-bottom: 2rem;
   }
-}
 
-.hero .image-grid .item-3 {
-  grid-column: 7/13;
-  grid-row: 1/3;
-}
-
-@media (max-width: 768px) {
-  .hero .image-grid .item-3 {
-    grid-column: 4/7;
-    grid-row: 2/3;
+  .hero-title {
+    font-size: 2.5rem;
   }
-}
 
-.hero .image-grid .item-4 {
-  grid-column: 1/3;
-  grid-row: 2/3;
-}
-
-@media (max-width: 768px) {
-  .hero .image-grid .item-4 {
-    grid-column: 1/3;
-    grid-row: 3/4;
+  .hero-image-main {
+    height: 300px; /* Reducimos la altura en dispositivos móviles */
   }
-}
 
-.hero .image-grid .item-5 {
-  grid-column: 3/5;
-  grid-row: 2/3;
-}
-
-@media (max-width: 768px) {
-  .hero .image-grid .item-5 {
-    grid-column: 3/5;
-    grid-row: 3/4;
+  .hero-image-half:first-child {
+    margin-right: 0.25rem; /* Reducimos el espacio entre imágenes en móviles */
   }
-}
 
-.hero .image-grid .item-6 {
-  grid-column: 5/7;
-  grid-row: 2/3;
-}
-
-@media (max-width: 768px) {
-  .hero .image-grid .item-6 {
-    grid-column: 5/7;
-    grid-row: 3/4;
+  .hero-image-grid img {
+    height: 100px;
   }
 }
 
@@ -778,240 +781,275 @@ section,
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
-.contact .info-item+.info-item {
-  margin-top: 40px;
-}
-
-.contact .info-item i {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  font-size: 20px;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-  transition: all 0.3s ease-in-out;
-  margin-right: 15px;
-}
-
-.contact .info-item h3 {
-  padding: 0;
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-
-.contact .info-item p {
-  padding: 0;
-  margin-bottom: 0;
-  font-size: 14px;
-}
-
-.contact .php-email-form {
-  height: 100%;
-}
-
-.contact .php-email-form input[type=text],
-.contact .php-email-form input[type=email],
-.contact .php-email-form textarea {
-  font-size: 14px;
-  padding: 10px 15px;
-  box-shadow: none;
-  border-radius: 0;
-  color: var(--default-color);
-  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
-}
-
-.contact .php-email-form input[type=text]:focus,
-.contact .php-email-form input[type=email]:focus,
-.contact .php-email-form textarea:focus {
-  border-color: var(--accent-color);
-}
-
-.contact .php-email-form input[type=text]::placeholder,
-.contact .php-email-form input[type=email]::placeholder,
-.contact .php-email-form textarea::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
-}
-
-.contact .php-email-form button[type=submit] {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  border: 0;
-  padding: 10px 30px;
-  transition: 0.4s;
-  border-radius: 4px;
-}
-
-.contact .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-}
-
 /*--------------------------------------------------------------
-# About Section
+# Contact Section - Cabañas
 --------------------------------------------------------------*/
-.about .section-subtitle {
-  color: var(--accent-color);
-  font-weight: 600;
+.contact-cabanas {
+  background-color: var(--background-color);
+  padding: 5rem 0;
+  font-family: var(--default-font);
+}
+
+.contact-cabanas .section-title {
+  font-family: var(--heading-font);
+  color: var(--heading-color);
+  font-size: 2.5rem;
+  text-align: center;
   margin-bottom: 0.5rem;
-  display: block;
 }
 
-.about .about-title {
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+.contact-cabanas .section-subtitle {
+  color: var(--default-color);
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
-.about .about-description {
-  margin-bottom: 2rem;
-}
-
-.about .about-images {
-  position: relative;
-  margin-bottom: 2rem;
-}
-
-.about .about-images .main-image {
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  border: 8px solid var(--surface-color);
-}
-
-.about .about-images .secondary-image {
-  position: absolute;
-  top: 30%;
-  right: -15%;
-  width: 40%;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  border: 5px solid var(--surface-color);
-}
-
-.about .about-images .client-count {
-  position: absolute;
-  bottom: -10%;
-  left: 10%;
-  background-color: var(--surface-color);
-  border-radius: 10px;
-  padding: 1rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+.contact-wrapper {
   display: flex;
-  align-items: center;
+  gap: 2rem;
 }
 
-.about .about-images .client-count img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  margin-right: 1rem;
+.contact-info {
+  flex: 1;
+  background-color: var(--surface-color);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.about .about-images .client-count .count-text h3 {
-  color: var(--accent-color);
-  font-size: 1.5rem;
-  margin-bottom: 0;
-}
-
-.about .about-images .client-count .count-text p {
-  font-size: 0.875rem;
-  margin-bottom: 0;
-}
-
-.about .features {
-  margin-bottom: 2rem;
-}
-
-.about .features .feature-item {
+.info-item {
   display: flex;
   align-items: flex-start;
   margin-bottom: 1.5rem;
 }
 
-.about .features .feature-item i {
-  font-size: 2rem;
+.info-item i {
   color: var(--accent-color);
+  font-size: 1.5rem;
   margin-right: 1rem;
 }
 
-.about .features .feature-item .feature-content h4 {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-}
-
-.about .features .feature-item .feature-content p {
-  font-size: 0.875rem;
-  margin-bottom: 0;
-}
-
-.about .cta-wrapper {
-  display: flex;
-  align-items: center;
-}
-
-.about .cta-wrapper .btn-primary {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
-  padding: 0.75rem 1.5rem;
-  font-weight: 600;
-  margin-right: 1.5rem;
-  transition: all 0.3s ease;
-}
-
-.about .cta-wrapper .btn-primary:hover {
-  background-color: color-mix(in srgb, var(--accent-color), black 10%);
-  border-color: color-mix(in srgb, var(--accent-color), black 10%);
-}
-
-.about .cta-wrapper .cta-text h4 {
-  font-size: 1.25rem;
+.info-item h3 {
+  font-size: 1.2rem;
+  color: var(--wood-color);
   margin-bottom: 0.25rem;
 }
 
-.about .cta-wrapper .cta-text p {
-  font-size: 0.875rem;
-  margin-bottom: 0;
-  color: color-mix(in srgb, var(--default-color), transparent 25%);
+.info-item p {
+  color: var(--default-color);
 }
 
-@media (max-width: 991.98px) {
-  .about .about-images .secondary-image {
-    right: 0;
-    width: 50%;
-  }
-
-  .about .about-images .client-count {
-    left: 0;
-  }
+.map-container {
+  margin-top: 2rem;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-@media (max-width: 767.98px) {
-  .about .section-title {
-    font-size: 2rem;
-  }
+.contact-form {
+  flex: 1;
+  background-color: var(--surface-color);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-  .about .about-images .secondary-image {
-    position: static;
-    width: 100%;
-    margin-top: 1rem;
-  }
+.form-group {
+  margin-bottom: 1.5rem;
+}
 
-  .about .about-images .client-count {
-    position: static;
-    margin-top: 1rem;
-  }
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--wood-color);
+  border-radius: 5px;
+  background-color: var(--background-color);
+  color: var(--default-color);
+  font-family: var(--default-font);
+}
 
-  .about .cta-wrapper {
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.submit-btn {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: var(--wood-color);
+}
+
+@media (max-width: 768px) {
+  .contact-wrapper {
     flex-direction: column;
-    align-items: flex-start;
+  }
+}
+
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+.about-cabanas {
+  padding: 80px 0;
+  background-color: var(--background-color);
+}
+
+.about-cabanas .subtitle {
+  color: var(--accent-color);
+  font-family: var(--accent-font);
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.about-cabanas .section-title h2 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-content h3 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-content p {
+  color: var(--default-color);
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.features-list {
+  margin-bottom: 2rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.feature-item i {
+  color: var(--accent-color);
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+.feature-item h4 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-item p {
+  color: var(--default-color);
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+
+.about-images {
+  position: relative;
+}
+
+.image-grid {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.main-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.main-image img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.main-image:hover img {
+  transform: scale(1.05);
+}
+
+.image-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(74, 55, 40, 0.9);
+  padding: 2rem;
+  color: var(--contrast-color);
+}
+
+.info-box h4 {
+  color: var(--contrast-color);
+  font-family: var(--heading-font);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.info-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.info-box ul li {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.info-box ul li i {
+  color: var(--accent-color);
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 991px) {
+  .about-content {
+      margin-bottom: 3rem;
   }
 
-  .about .cta-wrapper .btn-primary {
-    margin-right: 0;
-    margin-bottom: 1rem;
+  .cta-wrapper {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+  }
+
+  .info-box ul {
+      grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-cabanas {
+      padding: 60px 0;
+  }
+
+  .about-cabanas .section-title h2 {
+      font-size: 2rem;
+  }
+
+  .about-content h3 {
+      font-size: 1.75rem;
   }
 }
 
@@ -1024,6 +1062,10 @@ section,
 }
 
 .services .img img {
+  transition: 0.6s;
+}
+
+.services .details {
   transition: 0.6s;
 }
 
@@ -1086,3 +1128,4 @@ section,
 .whatsapp-float i {
   font-size: 24px;
 }
+

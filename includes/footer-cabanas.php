@@ -1,6 +1,6 @@
 <footer id="footer" class="footer dark-background">
     <div class="container">
-        <h3 class="sitename">DapsaTimbues</h3>
+        <h3 class="sitename">Cabañas</h3>
         <div class="social-links d-flex justify-content-center">
             <!-- <a href=""><i class="bi bi-twitter-x"></i></a> -->
             <a href=""><i class="bi bi-facebook"></i></a>
