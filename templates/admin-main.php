@@ -4,7 +4,7 @@ require_once 'includes/db_connection.php';
 
 try {
     // Obtener categorías usando la conexión mysqli existente
-    $query_categorias = "SELECT * FROM categorias";
+    $query_categorias = "SELECT * FROM categorias ORDER BY orden ASC";
     $result_categorias = mysqli_query($db, $query_categorias);
 
     if (!$result_categorias) {
