@@ -32,7 +32,7 @@
                     </div>
                     <div class="details">
                         <a href="service-details.html" class="stretched-link">
-                            <h3>Restaurant</h3>
+                            <h3>Hotel</h3>
                         </a>
                         <p>Disfruta de las mejores comidas</p>
                     </div>

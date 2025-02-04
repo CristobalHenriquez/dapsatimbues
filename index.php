@@ -20,14 +20,14 @@ include 'includes/head.php';
     //INCLUYO CLIENTS-DAPSA
     include 'includes/clients-dapsa.php';
 
-    //INCLUYO CONTACTO-DAPSA
-    include 'includes/contacto-dapsa.php';
-
     //INCLUYO ABOUT-DAPSA
     include 'includes/about-dapsa.php';
     
     //INCLUYO SERVICIOS-DAPSA
     include 'includes/servicios-dapsa.php';
+
+    //INCLUYO CONTACTO-DAPSA
+    include 'includes/contacto-dapsa.php';
     ?>
   </main>
 
