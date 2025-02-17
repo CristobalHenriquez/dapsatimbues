@@ -19,16 +19,16 @@ include 'includes/head.php';
 
     //INCLUYO CLIENTS-DAPSA
 
-include 'templates/clients-dapsa.php';
+    include 'templates/clients-dapsa.php';
 
-//INCLUYO ABOUT-DAPSA
-include 'templates/about-dapsa.php';
+    //INCLUYO ABOUT-DAPSA
+    include 'templates/about-dapsa.php';
 
-//INCLUYO SERVICIOS-DAPSA
-include 'templates/servicios-dapsa.php';
+    //INCLUYO SERVICIOS-DAPSA
+    include 'templates/servicios-dapsa.php';
 
-//INCLUYO CONTACTO-DAPSA
-include 'templates/contacto-dapsa.php';
+    //INCLUYO CONTACTO-DAPSA
+    include 'templates/contacto-dapsa.php';
     ?>
   </main>
 

@@ -1,5 +1,5 @@
 <!-- Contact Section -->
-<section id="contact" class="contact section">
+<section id="contact" class="contact section" style="font-family: 'Esphimere', sans-serif;">
 
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
@@ -15,7 +15,7 @@
 
         <div class="row gy-4">
 
-            <div class="col-lg-4" style="font-family: 'Esphimere', sans-serif;">
+            <div class="col-lg-4">
                 <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
                     <i class="bi bi-geo-alt flex-shrink-0"></i>
                     <div>
@@ -43,39 +43,115 @@
             </div>
 
             <div class="col-lg-8">
-                <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+                <form action="controladores/procesar-contacto.php" method="post" id="contactForm" class="contact-form">
+                    <input type="hidden" name="form_type" value="dapsa">
                     <div class="row gy-4">
+                        <div class="col-md-6">
+                            <input type="text" name="name" class="form-control" placeholder="Tu nombre" required>
+                        </div>
 
                         <div class="col-md-6">
-                            <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                        </div>
-
-                        <div class="col-md-6 ">
-                            <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                            <input type="email" class="form-control" name="email" placeholder="Tu email" required>
                         </div>
 
                         <div class="col-md-12">
-                            <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                            <input type="text" class="form-control" name="subject" placeholder="Asunto" required>
                         </div>
 
                         <div class="col-md-12">
-                            <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                            <textarea class="form-control" name="message" rows="6" placeholder="Mensaje" required></textarea>
                         </div>
 
                         <div class="col-md-12 text-center">
-                            <div class="loading">Loading</div>
-                            <div class="error-message"></div>
-                            <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                            <button type="submit">Send Message</button>
+                            <div class="loading d-none">Enviando mensaje...</div>
+                            <div class="error-message" style="display: none;"></div>
+                            <div class="sent-message d-none">Tu mensaje ha sido enviado. ¡Gracias!</div>
+                            <button type="submit" class="btn btn-primary"><i class="bi bi-send me-2"></i>Enviar Mensaje</button>
                         </div>
-
                     </div>
                 </form>
-            </div><!-- End Contact Form -->
+            </div>
+</section>
 
-        </div>
+<style>
+    .contact-form .loading,
+    .contact-form .error-message,
+    .contact-form .sent-message {
+        text-align: center;
+        padding: 15px;
+        border-radius: 4px;
+        margin-bottom: 15px;
+    }
 
-    </div>
+    .contact-form .loading {
+        background: #ffd700;
+    }
 
-</section><!-- /Contact Section -->
+    .contact-form .error-message {
+        color: #fff;
+        background: #dc3545;
+    }
+
+    .contact-form .sent-message {
+        color: #fff;
+        background: #28a745;
+    }
+
+    .contact-form button[type="submit"] {
+        background: var(--accent-color);
+        border: none;
+        padding: 12px 30px;
+        color: #fff;
+        transition: 0.4s;
+        border-radius: 8px;
+    }
+
+    .contact-form button[type="submit"]:hover {
+        background: var(--heading-color);
+    }
+</style>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const form = this;
+        const formData = new FormData(form);
+        const errorMessage = form.querySelector('.error-message');
+        const loadingMessage = form.querySelector('.loading');
+        const sentMessage = form.querySelector('.sent-message');
+        const submitButton = form.querySelector('button[type="submit"]');
+
+        // Reset messages
+        errorMessage.style.display = 'none';
+        loadingMessage.classList.remove('d-none');
+        sentMessage.classList.add('d-none');
+        submitButton.disabled = true;
+
+        fetch(form.getAttribute('action'), {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                loadingMessage.classList.add('d-none');
+
+                if (data.success) {
+                    sentMessage.classList.remove('d-none');
+                    form.reset();
+                } else {
+                    errorMessage.textContent = data.message;
+                    errorMessage.style.display = 'block';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                loadingMessage.classList.add('d-none');
+                errorMessage.textContent = 'Ocurrió un error al enviar el mensaje. Por favor, inténtelo de nuevo.';
+                errorMessage.style.display = 'block';
+            })
+            .finally(() => {
+                submitButton.disabled = false;
+            });
+    });
+</script>
