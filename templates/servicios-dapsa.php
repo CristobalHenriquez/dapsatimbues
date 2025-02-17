@@ -31,13 +31,8 @@
                         <img src="assets/img/hoteles.jpg" class="img-fluid" alt="Hoteles">
                     </div>
                     <div class="details">
-<<<<<<< HEAD:includes/servicios-dapsa.php
-                        <a href="service-details.html" class="stretched-link">
-                            <h3>Hotel</h3>
-=======
                         <a href="index-hoteles.php" class="stretched-link" target="_blank">
                             <h3>Hoteles</h3>
->>>>>>> 6409779617724a0808a4a2cf311322ca944f16ff:templates/servicios-dapsa.php
                         </a>
                         <p>Disfruta de las mejores hoteles</p>
                     </div>

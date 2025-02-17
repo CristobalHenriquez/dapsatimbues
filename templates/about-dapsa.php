@@ -37,7 +37,7 @@
                         </div>
                     </div>
                     <div class="cta-wrapper" data-aos="fade-up" data-aos-delay="500">
-                        <a href="carta.php" class="btn btn-primary"><i class="bi bi-card-list"> nuestra carta</i></a>
+                        <a href="carta.php" class="btn btn-primary" target="_blank"><i class="bi bi-card-list"> nuestra carta</i></a>
                         <div class="cta-text">
                             <h4>Reserva Ahora</h4>
                             <p>Y vive una experiencia gastronomica unica</p>
