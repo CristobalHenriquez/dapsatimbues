@@ -1,7 +1,7 @@
 <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-        <a href="index.php" class="logo d-flex align-items-center">
+        <a href="Cabañas" class="logo d-flex align-items-center">
             <!-- Uncomment the line below if you also wish to use an image logo -->
             <!-- <img src="assets/img/DapsaLogo.png" alt="Logo de Dapsa Timbues"> -->
             <h1 class="sitename">Cabañas</h1>

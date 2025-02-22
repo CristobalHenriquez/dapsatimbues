@@ -9,7 +9,7 @@
             <a href=""><i class="bi bi-linkedin"></i></a> -->
         </div>
         <div class="credits text-start">
-            <a href="index.php" target="_self">
+            <a href="DapsaTimbues" target="_self">
                 <img src="assets/img/DapsaLogo.png" alt="Logo Dapsa" class="footer-logo" style="width: 150px;">
             </a>
         </div>
