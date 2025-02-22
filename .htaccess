@@ -1,0 +1,20 @@
+# Activar el motor de reescritura
+RewriteEngine On
+
+# Quitar la extensión .php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.+)$ $1.php [L,QSA]
+
+# Redirigir la raíz del sitio a index.php
+RewriteRule ^$ index.php [L]
+
+# Redirigir URLs amigables
+RewriteRule ^DapsaTimbues$ index.php [L]
+RewriteRule ^Carta$ carta.php [L]
+RewriteRule ^Cabañas$ index-cabanas.php [L]
+RewriteRule ^Hoteles$ index-hoteles.php [L]
+RewriteRule ^Alumno$ student.php [L]
+RewriteRule ^InicioDeSesion$ login.php [L]
+
+

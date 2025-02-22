@@ -17,7 +17,7 @@
                         <img src="assets/img/cabana1.jpg" class="img-fluid" alt="Cabañas">
                     </div>
                     <div class="details">
-                        <a href="index-cabanas.php" class="stretched-link" target="_blank">
+                        <a href="Cabañas" class="stretched-link" target="_blank">
                             <h3>Cabañas </h3>
                         </a>
                         <p>Disfruta de las mejores cabañas</p>
@@ -31,7 +31,7 @@
                         <img src="assets/img/hoteles.jpg" class="img-fluid" alt="Hoteles">
                     </div>
                     <div class="details">
-                        <a href="index-hoteles.php" class="stretched-link" target="_blank">
+                        <a href="Hoteles" class="stretched-link" target="_blank">
                             <h3>Hoteles</h3>
                         </a>
                         <p>Disfruta de las mejores hoteles</p>
