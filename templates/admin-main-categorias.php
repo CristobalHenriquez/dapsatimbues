@@ -45,10 +45,10 @@ try {
                                             </button>
                                         </td>
                                         <td>
-                                            <button class="btn btn-edit" onclick="editarCategoria(<?php echo $categoria['id_categoria']; ?>)">
+                                            <button class="btn btn-outline-primary" onclick="editarCategoria(<?php echo $categoria['id_categoria']; ?>)">
                                                 <i class="bi bi-pencil-square"></i>
                                             </button>
-                                            <button class="btn btn-delete" onclick="eliminarCategoria(<?php echo $categoria['id_categoria']; ?>, '<?php echo htmlspecialchars($categoria['nombre_categoria']); ?>')">
+                                            <button class="btn btn-outline-danger" onclick="eliminarCategoria(<?php echo $categoria['id_categoria']; ?>, '<?php echo htmlspecialchars($categoria['nombre_categoria']); ?>')">
                                                 <i class="bi bi-trash"></i>
                                             </button>
                                         </td>
@@ -85,7 +85,7 @@ try {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary" onclick="guardarCambiosCategoria()">Guardar cambios</button>
+                    <button type="button" class="btn btn-success" onclick="guardarCambiosCategoria()">Guardar cambios</button>
                 </div>
             </div>
         </div>
@@ -113,7 +113,7 @@ try {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" onclick="agregarCategoria()">Agregar Categoría</button>
+                    <button type="button" class="btn btn-success" onclick="agregarCategoria()">Agregar Categoría</button>
                 </div>
             </div>
         </div>

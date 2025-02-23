@@ -137,7 +137,7 @@ try {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary" onclick="guardarCambios()">Guardar cambios</button>
+                    <button type="button" class="btn btn-success" onclick="guardarCambios()">Guardar cambios</button>
                 </div>
             </div>
         </div>
@@ -181,7 +181,7 @@ try {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" onclick="agregarProducto()">Agregar Producto</button>
+                    <button type="button" class="btn btn-success" onclick="agregarProducto()">Agregar Producto</button>
                 </div>
             </div>
         </div>

@@ -10,7 +10,7 @@ include 'includes/head-admin.php';
 
     <main class="main">
         <?php
-        include 'templates/admin-main-categorias.php';
+        include 'templates/admin-main-ofertas.php';
         include 'includes/footer-admin.php';
         ?>
     </main>
