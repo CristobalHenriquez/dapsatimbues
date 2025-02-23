@@ -19,7 +19,7 @@ include 'includes/head.php';
 
     //INCLUYO CLIENTS-DAPSA
 
-    include 'templates/clients-dapsa.php';
+    include 'templates/ofertas-dapsa.php';
 
     //INCLUYO ABOUT-DAPSA
     include 'templates/about-dapsa.php';
