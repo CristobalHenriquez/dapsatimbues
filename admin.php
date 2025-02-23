@@ -11,6 +11,7 @@ include 'includes/head-admin.php';
     <main class="main">
         <?php
         include 'templates/admin-main.php';
+        include 'includes/footer-admin.php';
         ?>
     </main>
 
