@@ -1,4 +1,5 @@
 <?php
+session_start();
 //INCLUYO HEAD
 include 'includes/head.php';
 
