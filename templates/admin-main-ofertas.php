@@ -39,28 +39,30 @@ try {
                                         while ($oferta = mysqli_fetch_assoc($result_ofertas)):
                                     ?>
                                             <tr>
-                                                <td><?php echo htmlspecialchars($oferta['dia_semana']); ?></td>
-                                                <td><?php echo htmlspecialchars($oferta['titulo']); ?></td>
-                                                <td>
+                                                <td data-label="Día"><?php echo htmlspecialchars($oferta['dia_semana']); ?></td>
+                                                <td data-label="Título"><?php echo htmlspecialchars($oferta['titulo']); ?></td>
+                                                <td data-label="Imagen">
                                                     <img src="<?php echo htmlspecialchars($oferta['imagen']); ?>"
                                                         alt="Oferta" class="img-thumbnail" style="max-width: 100px;">
                                                 </td>
-                                                <td>
+                                                <td data-label="Estado">
                                                     <span class="badge <?php echo $oferta['visible'] ? 'bg-success' : 'bg-danger'; ?>">
                                                         <?php echo $oferta['visible'] ? 'Visible' : 'No visible'; ?>
                                                     </span>
                                                 </td>
-                                                <td>
+                                                <td data-label="Acciones">
                                                     <div class="btn-group" role="group">
                                                         <button class="btn btn-outline-primary editar-oferta"
                                                             data-id="<?php echo $oferta['id']; ?>"
                                                             data-bs-toggle="modal"
                                                             data-bs-target="#editarOfertaModal">
                                                             <i class="bi bi-pencil-square"></i>
+                                                            <span class="d-none d-md-inline ms-1">Editar</span>
                                                         </button>
                                                         <button class="btn btn-outline-danger eliminar-oferta"
                                                             data-id="<?php echo $oferta['id']; ?>">
                                                             <i class="bi bi-trash"></i>
+                                                            <span class="d-none d-md-inline ms-1">Eliminar</span>
                                                         </button>
                                                     </div>
                                                 </td>
@@ -129,7 +131,7 @@ try {
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <button type="submit" class="btn btn-success">Guardar</button>
                     </div>
                 </form>
             </div>
@@ -184,7 +186,7 @@ try {
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                        <button type="submit" class="btn btn-success">Guardar cambios</button>
                     </div>
                 </form>
             </div>

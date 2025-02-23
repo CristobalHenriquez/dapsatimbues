@@ -349,3 +349,71 @@ border-top: 1px solid color-mix(in srgb, #fff, transparent 90%);
 font-size: 13px;
 padding-top: 5px;
 }
+
+/* Agregar estos estilos para la tabla de ofertas */
+@media screen and (max-width: 768px) {
+    #tabla-ofertas {
+        display: block;
+        width: 100%;
+    }
+
+    #tabla-ofertas thead {
+        display: none;
+    }
+
+    #tabla-ofertas tbody {
+        display: block;
+        width: 100%;
+    }
+
+    #tabla-ofertas tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        padding: 1rem;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    #tabla-ofertas td {
+        display: block;
+        text-align: left;
+        padding: 0.5rem 0;
+        border: none;
+    }
+
+    #tabla-ofertas td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: inline-block;
+        width: 120px;
+        margin-right: 1rem;
+    }
+
+    #tabla-ofertas td:last-child {
+        text-align: center;
+        padding-top: 1rem;
+        border-top: 1px solid #dee2e6;
+        margin-top: 0.5rem;
+    }
+
+    #tabla-ofertas .btn-group {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    #tabla-ofertas .btn {
+        padding: 0.5rem 1rem;
+        flex: 1;
+        max-width: 120px;
+    }
+
+    #tabla-ofertas img.img-thumbnail {
+        max-width: 150px;
+        margin: 0 auto;
+        display: block;
+    }
+}
