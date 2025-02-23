@@ -1,5 +1,6 @@
 <?php
-session_start();
+include_once 'includes/auth.php';
+requireAuth();
 //INCLUYO HEAD
 include 'includes/head-admin.php';
 ?>

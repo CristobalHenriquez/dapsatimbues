@@ -18,5 +18,7 @@ RewriteRule ^InicioDeSesion$ login.php [L]
 RewriteRule ^AdministracionProductos$ admin.php [L]
 RewriteRule ^AdministracionCategorias$ admin-categorias.php [L]
 RewriteRule ^AdministracionOfertas$ admin-ofertas.php [L]
+RewriteRule ^InicioDeSesion$ login.php [L]
+RewriteRule ^CerrarSesion$ logout.php [L]
 
 

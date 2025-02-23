@@ -21,6 +21,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
       </ul>
     </div>
     <a href="Carta" class="btn btn-warning carta-btn" target="_blank">CARTA</a>
+    <a href="CerrarSesion" class="btn btn-secondary mx-2">Cerrar Sesion</a>
   </div>
 </nav>
 <script>

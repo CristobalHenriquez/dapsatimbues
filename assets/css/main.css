@@ -1086,3 +1086,8 @@ section,
 .whatsapp-float i {
   font-size: 24px;
 }
+
+/* login */
+.login-page{
+  font-family: Arial, Helvetica, sans-serif;
+}
